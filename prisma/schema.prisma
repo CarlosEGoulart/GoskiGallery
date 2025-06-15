@@ -1,0 +1,38 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Artist{ 
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  name String 
+  bio String
+  birthYear Int
+  instagram String
+  artId String @db.ObjectId
+  art Art[] @relation("Artist")
+
+  @@map("Artist")
+}
+
+model Art{
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  title String
+  description String
+  year Int
+  imageUrl String
+  artistId String @db.ObjectId
+  artist Artist @relation("Artist", fields: [artistId], references: [id])
+  @@map("Art")
+}
+
