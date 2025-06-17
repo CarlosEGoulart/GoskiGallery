@@ -1,4 +1,3 @@
-
 GoskiGallery.
 
 O Projeto GoskiGallery é uma forma de demonstrar habilidades e conhecimentos full stack.

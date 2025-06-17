@@ -1,1 +1,17 @@
-i
+import { FastifyRequest, FastifyReply } from "fastify";
+import CreateArtService from "../services/CreateArtService";
+
+export default class CreateArtController{
+    async handle(request: FastifyRequest, reply: FastifyReply){
+        
+        const{title, description, year, imageUrl, artistId} = request.body as {id: String, title: string, description: string, year: number, imageUrl: string, artistId: String};
+        
+        const ArtService = new CreateArtService();
+
+        const Art = await ArtService.execute({title, description, year, imageUrl, artistId});
+
+        reply.send(Art);
+
+    
+    };
+}
