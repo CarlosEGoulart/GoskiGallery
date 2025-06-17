@@ -1,0 +1,9 @@
+node_modules
+# Keep environment variables out of version control
+.env
+
+/src/generated/prisma
+.idx/.data/mongodb/journal/WiredTigerLog.0000000005
+.idx/.data/mongodb/diagnostic.data/metrics.interim
+.idx/.data/mongodb/WiredTiger.wt
+.idx/.data/mongodb/WiredTiger.turtle
