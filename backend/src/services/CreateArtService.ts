@@ -5,17 +5,14 @@ interface CreateArtProps{
     description: string,
     year: number,
     imageUrl: string,
-    artistId: String
+    artistId: string
 }
 
 export default class CreateArtService{
     async execute({ title, description, year, imageUrl, artistId }: CreateArtProps){
-        
         if(!title || !description || !year || !imageUrl || !artistId){
             throw new Error("Solicitação invalida!");
         }
-
-
         const Art = await prismaClient.art.create({
             data:{
                 title,
@@ -25,7 +22,6 @@ export default class CreateArtService{
                 artistId
             }
         });
-
         return Art;
     };
 }

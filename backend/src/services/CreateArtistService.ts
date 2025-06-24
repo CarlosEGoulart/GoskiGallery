@@ -5,13 +5,12 @@ interface CreateArtistProps{
     bio: string,
     birthYear: number,
     instagram: string,
-    artId: String
 }
 
 export default class CreateArtistService{
-    async execute({ name, bio, birthYear, instagram, artId }: CreateArtistProps){
+    async execute({ name, bio, birthYear, instagram}: CreateArtistProps){
         
-        if(!name || !bio || !birthYear || !instagram || !artId){
+        if(!name || !bio || !birthYear || !instagram){
             throw new Error("Solicitação invalida!");
         }
 
@@ -21,8 +20,7 @@ export default class CreateArtistService{
                 name,
                 bio,
                 birthYear,
-                instagram,
-                artId
+                instagram
             }
         });
 

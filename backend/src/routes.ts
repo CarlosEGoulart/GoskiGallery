@@ -17,7 +17,7 @@ export async function routes(fastify: FastifyInstance, options: FastifyPluginOpt
         return new CreateArtistController().handle(request, reply);
     });
 
-    fastify.get("/Artists", async(request: FastifyRequest, reply: FastifyReply)=> { 
+    fastify.get("/Artist", async(request: FastifyRequest, reply: FastifyReply)=> { 
         return new ListArtistController().handle(request, reply);
     });   
 

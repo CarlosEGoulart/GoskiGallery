@@ -7,3 +7,5 @@ node_modules
 .idx/.data/mongodb/diagnostic.data/metrics.interim
 .idx/.data/mongodb/WiredTiger.wt
 .idx/.data/mongodb/WiredTiger.turtle
+
+/src/generated/prisma
